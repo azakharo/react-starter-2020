@@ -1,16 +1,19 @@
-import React from "react";
-import { hot } from 'react-hot-loader/root';
+import React from 'react';
+import PropTypes from 'prop-types';
+import {hot} from 'react-hot-loader/root';
 
 import Page1 from './page1';
 
-class App extends React.Component {
+class App extends React.PureComponent {
+  static propTypes = {
+    name: PropTypes.string,
+  };
+
   render() {
-    const { name } = this.props;
+    const {name} = this.props;
     return (
       <>
-        <h1>
-          Hello {name}
-        </h1>
+        <h1>Hello {name}</h1>
         <Page1 />
       </>
     );

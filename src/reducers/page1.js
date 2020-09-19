@@ -1,4 +1,4 @@
-import {ACTION__REQUEST_START} from "../constants/actions";
+import {ACTION__REQUEST_START} from '../constants/actions';
 
 const initialState = {
   requestSent: false,
