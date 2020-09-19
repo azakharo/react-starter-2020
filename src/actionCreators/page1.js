@@ -12,8 +12,14 @@ const makeRequest = () => (dispatch, getState) => {
   dispatch({type: ACTION__REQUEST_START});
 
   return axios.get('https://reqres.in/api/users?page=2').then(
-    data => console.log(data),
-    err => console.error(err),
+    data => {
+      /* eslint-disable-next-line import/prefer-default-export */
+      console.log(data);
+    },
+    err => {
+      /* eslint-disable-next-line import/prefer-default-export */
+      console.error(err);
+    },
   );
 };
 

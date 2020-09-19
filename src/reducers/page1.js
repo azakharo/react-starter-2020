@@ -4,7 +4,7 @@ const initialState = {
   requestSent: false,
 };
 
-export default function (state = initialState, action) {
+export default function page1Reducer(state = initialState, action) {
   switch (action.type) {
     case ACTION__REQUEST_START:
       return {...state, requestSent: true};

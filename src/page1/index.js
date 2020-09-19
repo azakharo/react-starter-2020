@@ -1,7 +1,12 @@
 import React, {useCallback} from 'react';
 import {useDispatch} from 'react-redux';
+import {Button} from 'antd';
+import classNames from 'classnames/bind';
 
 import makeRequest from '../actionCreators/page1';
+import styles from './styles.css';
+
+const cx = classNames.bind(styles);
 
 const Page1 = () => {
   const dispatch = useDispatch();
@@ -11,9 +16,12 @@ const Page1 = () => {
   }, [dispatch]);
 
   return (
-    <button type="button" onClick={handleButtonClick}>
+    <Button
+      type="primary"
+      onClick={handleButtonClick}
+      className={cx('main-button')}>
       Send request
-    </button>
+    </Button>
   );
 };
 

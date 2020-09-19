@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {hot} from 'react-hot-loader/root';
 
 import Page1 from './page1';
+import './App.css';
 
 class App extends React.PureComponent {
   static propTypes = {

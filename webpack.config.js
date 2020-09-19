@@ -31,6 +31,21 @@ const config = {
         test: /\.(js|jsx)$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
