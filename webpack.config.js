@@ -46,16 +46,24 @@ const config = {
           },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader',
+        ]
       }
     ]
   },
   resolve: {
     extensions: [
       '.js',
-      '.jsx'
+      '.jsx',
+      '.png', '.svg', '.jpg', '.gif'
     ],
     alias: {
-      'react-dom': '@hot-loader/react-dom'
+      'react-dom': '@hot-loader/react-dom',
+      'IMAGES': path.resolve(__dirname, 'assets/images/')
     }
   },
   devServer: {

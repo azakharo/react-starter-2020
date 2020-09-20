@@ -13,11 +13,11 @@ const makeRequest = () => (dispatch, getState) => {
 
   return axios.get('https://reqres.in/api/users?page=2').then(
     data => {
-      /* eslint-disable-next-line import/prefer-default-export */
+      /* eslint-disable-next-line no-console */
       console.log(data);
     },
     err => {
-      /* eslint-disable-next-line import/prefer-default-export */
+      /* eslint-disable-next-line no-console */
       console.error(err);
     },
   );

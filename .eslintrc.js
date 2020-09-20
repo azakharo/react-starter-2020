@@ -44,5 +44,8 @@ module.exports = {
     "import/extensions": [0, "never"],
     "import/prefer-default-export": 1,
   },
-  parser: 'babel-eslint'
+  parser: 'babel-eslint',
+  "settings": {
+    "import/resolver": "webpack"
+  }
 };
