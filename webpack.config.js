@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const config = {
   entry: [
@@ -68,7 +69,15 @@ const config = {
   },
   devServer: {
     contentBase: './dist'
-  }
+  },
+  plugins: [
+    new StyleLintPlugin({
+      context: 'src',
+      files: '**/*.css',
+      failOnError: false,
+      quiet: true
+    })
+  ]
 };
 
 module.exports = config;
