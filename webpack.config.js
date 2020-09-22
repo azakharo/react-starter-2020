@@ -57,6 +57,10 @@ const config = {
     ]
   },
   resolve: {
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src/')
+    ],
     extensions: [
       '.js',
       '.jsx',
@@ -68,7 +72,10 @@ const config = {
     }
   },
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    historyApiFallback: {
+      disableDotRule: true
+    }
   },
   plugins: [
     new StyleLintPlugin({

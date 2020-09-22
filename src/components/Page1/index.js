@@ -4,7 +4,7 @@ import {Button} from 'antd';
 import classNames from 'classnames/bind';
 
 import errorImg from 'IMAGES/error-page-icon.png';
-import makeRequest from '../actionCreators/page1';
+import makeRequest from 'actionCreators/page1';
 import styles from './styles.css';
 
 const cx = classNames.bind(styles);
