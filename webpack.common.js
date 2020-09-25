@@ -1,15 +1,33 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
-const config = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+const {PATHS} = require('./build-constants.js');
+
+const entries = {
+  app: path.resolve(PATHS.src, './index.js'),
+};
+
+const htmlPluginInstances = [];
+const entryNames = Object.keys(entries);
+entryNames.forEach((entryName, entryInd) => {
+  htmlPluginInstances.push(new HtmlWebpackPlugin({
+      template: path.join(__dirname, './index.html'),
+      filename: entryInd === 0 ? 'index.html' : `${entryName}.html`,
+      path: PATHS.dist,
+      favicon: PATHS.images + '/' + '/favicon.ico',
+      chunks: [entryName]
+    })
+  );
+});
+
+const webpackConfig = {
+  entry: entries,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    path: PATHS.dist,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -59,25 +77,18 @@ const config = {
   resolve: {
     modules: [
       'node_modules',
-      path.resolve(__dirname, 'src/')
+      PATHS.src,
+      PATHS.images
     ],
-    extensions: [
-      '.js',
-      '.jsx',
-      '.png', '.svg', '.jpg', '.gif'
-    ],
+    extensions: ['.js', '.jsx', '.json', '.svg', '.png', '.gif', '.jpg'],
     alias: {
-      'react-dom': '@hot-loader/react-dom',
-      'IMAGES': path.resolve(__dirname, 'assets/images/')
-    }
-  },
-  devServer: {
-    contentBase: './dist',
-    historyApiFallback: {
-      disableDotRule: true
+      'IMAGES': PATHS.images
     }
   },
   plugins: [
+    ...htmlPluginInstances,
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin(),
     new StyleLintPlugin({
       context: 'src',
       files: '**/*.css',
@@ -87,4 +98,4 @@ const config = {
   ]
 };
 
-module.exports = config;
+module.exports = webpackConfig;

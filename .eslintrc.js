@@ -45,7 +45,11 @@ module.exports = {
     "import/prefer-default-export": 1,
   },
   parser: 'babel-eslint',
-  "settings": {
-    "import/resolver": "webpack"
+  settings: {
+    "import/resolver": {
+      webpack: {
+        config: 'webpack.common.js'
+      }
+    }
   }
 };
