@@ -1,6 +1,19 @@
-# simple-button-on-hooks
+# React.js application starter 2020
 
-Empty project.
+Usage: create fast prototypes, solve test tasks.
+
+## Features:
+* Babel, Webpack
+* Separate webpack config for developement and production. There is also a common part.
+* webpack dev server with hot reloading
+* ESlint, Stylelint
+* Prettier
+* PostCSS and autoprefixer
+* Redux, redux-thunk + setup redux dev tools for developement
+* File structure
+* Routing configured
+* axios
+* antd as default UI toolkit. Can be easily removed if not needed.
 
 ## Building and running on localhost
 
@@ -16,22 +29,11 @@ To run in hot module reloading mode:
 npm start
 ```
 
+Open the file `http://localhost:8080` in your browser
+
+
 To create a production build:
 
 ```sh
-npm run build-prod
+npm run build
 ```
-
-To create a development build:
-
-```sh
-npm run build-dev
-```
-
-## Running
-
-Open the file `dist/index.html` in your browser
-
-## Credits
-
-Made with [createapp.dev](https://createapp.dev/)
