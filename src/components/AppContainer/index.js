@@ -6,7 +6,7 @@ import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
-import rootReducer from 'reducers/page1';
+import rootReducer from 'reducers';
 import App from 'components/App';
 import history from '../../history';
 
@@ -23,7 +23,7 @@ const AppContainer = () => {
   return (
     <Provider store={store}>
       <Router history={history}>
-        <App name="Jane" />
+        <App />
       </Router>
     </Provider>
   );

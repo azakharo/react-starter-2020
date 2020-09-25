@@ -73,24 +73,41 @@ export default class ApiService {
   // Auth
 
   static async login(username, password) {
-    const response = await ApiService.axi
-      .post('/login', {
-        login: username,
+    let response;
+
+    try {
+      // For successful login use:
+      // "username": "eve.holt@reqres.in",
+      // "password": "cityslicka"
+      response = await ApiService.axi.post('https://reqres.in/api/login', {
+        email: username,
         password,
       });
+    } catch (error) {
+      const errorData = error.response.data;
+      const message = errorData.error;
+
+      throw new Error(message);
+    }
 
     // Get something from the response's data or headers
-    // Store it in ApiService if necessary for later usage here
+    // Store it in ApiService if necessary for later usage
+
+    const {token} = response.data;
+
+    return {
+      name: 'alexey',
+      token,
+    };
   }
 
-  static logout() {
-  }
+  static logout() {}
 
   //= =======================================
   // Request cancellation
 
   static createCancelToken() {
-    const CancelToken = axios.CancelToken;
+    const {CancelToken} = axios;
 
     return CancelToken.source();
   }
@@ -101,5 +118,4 @@ export default class ApiService {
 
   // Request cancellation
   //= =======================================
-
 }

@@ -3,7 +3,7 @@ import {ACTION__REQUEST_START} from '../constants/actions';
 
 const makeRequest = () => (dispatch, getState) => {
   const state = getState();
-  const {requestSent} = state;
+  const {requestSent} = state.page1;
 
   if (requestSent) {
     return undefined;
