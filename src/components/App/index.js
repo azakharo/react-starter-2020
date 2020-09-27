@@ -27,7 +27,7 @@ class App extends React.PureComponent {
 
     return (
       <Switch>
-        <Route path={ROUTE__MAIN} exact component={Main} />
+        <Route path={ROUTE__MAIN} component={Main} />
         <Redirect to={ROUTE__MAIN} />
       </Switch>
     );

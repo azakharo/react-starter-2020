@@ -18,7 +18,6 @@ const Page1 = () => {
 
   return (
     <>
-      <div className={cx('certificates')} />
       <img src={errorImg} alt="Error" />
       <Button
         type="primary"
