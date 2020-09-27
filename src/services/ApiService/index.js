@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const BASE_URL = 'https://reqres.in';
+
 export default class ApiService {
   static axi = axios.create();
 
@@ -79,7 +81,7 @@ export default class ApiService {
       // For successful login use:
       // "username": "eve.holt@reqres.in",
       // "password": "cityslicka"
-      response = await ApiService.axi.post('https://reqres.in/api/login', {
+      response = await ApiService.axi.post(`${BASE_URL}/api/login`, {
         email: username,
         password,
       });

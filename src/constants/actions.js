@@ -1,5 +1,3 @@
-export const ACTION__REQUEST_START = 'ACTION__REQUEST_START';
-
 // login/logout related actions
 export const ACTION__LOGIN = 'ACTION__LOGIN';
 export const ACTION__LOGIN_SUCCESS = 'ACTION__LOGIN_SUCCESS';
