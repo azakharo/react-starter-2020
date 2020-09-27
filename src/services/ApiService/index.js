@@ -101,7 +101,9 @@ export default class ApiService {
     };
   }
 
-  static logout() {}
+  static logout() {
+    return Promise.resolve();
+  }
 
   //= =======================================
   // Request cancellation

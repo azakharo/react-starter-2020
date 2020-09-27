@@ -1,27 +1,41 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 
-import Page1 from 'components/Page1';
-import Page2 from 'components/Page2';
+import {ROUTE__LOGIN, ROUTE__MAIN} from 'constants/routes';
 import Login from 'components/Login';
+import Main from 'components/Main';
 import './styles.css';
 
 class App extends React.PureComponent {
-  // static propTypes = {
-  //   name: PropTypes.string,
-  // };
+  static propTypes = {
+    isAuthenticated: PropTypes.bool.isRequired,
+  };
 
   render() {
+    const {isAuthenticated} = this.props;
+
+    if (!isAuthenticated) {
+      return (
+        <Switch>
+          <Route path={ROUTE__LOGIN} exact component={Login} />
+          <Redirect to={ROUTE__LOGIN} />
+        </Switch>
+      );
+    }
+
     return (
       <Switch>
-        <Route path="/page1" exact component={Page1} />
-        <Route path="/page2" exact component={Page2} />
-        <Route path="/login" exact component={Login} />
-        <Redirect to="/page1" />
+        <Route path={ROUTE__MAIN} exact component={Main} />
+        <Redirect to={ROUTE__MAIN} />
       </Switch>
     );
   }
 }
 
-export default withRouter(App);
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default withRouter(connect(mapStateToProps)(App));
