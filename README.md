@@ -4,7 +4,7 @@ Usage: create fast prototypes, solve test tasks.
 
 ## Features:
 * Babel, Webpack
-* Separate webpack config for developement and production. There is also a common part.
+* Separate webpack config for development and production. There is also a common part.
 * webpack dev server with hot reloading
 * ESlint, Stylelint
 * Prettier
@@ -14,6 +14,7 @@ Usage: create fast prototypes, solve test tasks.
 * Routing configured
 * axios
 * antd as default UI toolkit. Can be easily removed if not needed.
+* As an example, the login and main page were added to the project.
 
 ## Building and running on localhost
 
