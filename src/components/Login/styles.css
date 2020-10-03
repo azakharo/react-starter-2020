@@ -11,9 +11,8 @@
 
 .form {
   padding: 24px;
-
-  /* necessary for showing the login button and error message on the same line */
   min-width: 320px;
+  min-height: 300px;
 }
 
 .submit-button {
@@ -24,5 +23,6 @@
 }
 
 .error-msg {
+  margin-top: 8px;
   color: red;
 }

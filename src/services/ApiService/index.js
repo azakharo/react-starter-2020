@@ -12,7 +12,7 @@ export default class ApiService {
 
   static responseInterceptor = null;
 
-  static init(/* unauthCallback */) {
+  static init(unauthCallback) {
     // Add a request interceptor
     ApiService.requestInterceptor = ApiService.axi.interceptors.request.use(
       config => {
@@ -49,6 +49,13 @@ export default class ApiService {
 
         return response;
       },
+      error => {
+        if (error?.response.status === 401) {
+          unauthCallback();
+        }
+
+        return Promise.reject(error);
+      },
     );
   }
 
@@ -70,6 +77,9 @@ export default class ApiService {
     // So, recreate axios instance from scratch.
     ApiService.axi = axios.create();
   }
+
+  // Initialization
+  //---------------------------------------------------------------------------
 
   //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   // Auth
@@ -106,6 +116,9 @@ export default class ApiService {
   static logout() {
     return Promise.resolve();
   }
+
+  // Auth
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   //= =======================================
   // Request cancellation

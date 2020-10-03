@@ -27,9 +27,20 @@ const store = createStore(
 store.subscribe(
   throttle(() => {
     const state = store.getState();
-    const {auth} = state;
+    const authState = state.auth;
 
-    saveState({auth});
+    if (!authState) {
+      return;
+    }
+
+    const {isAuthenticated, user} = authState;
+
+    saveState({
+      auth: {
+        isAuthenticated,
+        user,
+      },
+    });
   }, 1000),
 );
 

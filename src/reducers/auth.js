@@ -3,7 +3,7 @@ import {
   ACTION__LOGIN_FAIL,
   ACTION__LOGIN_SUCCESS,
   ACTION__LOGOUT,
-} from '../constants/actions';
+} from 'constants/actions';
 
 const initialState = {
   isInProgress: false,
