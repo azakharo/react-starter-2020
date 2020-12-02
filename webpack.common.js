@@ -17,7 +17,7 @@ entryNames.forEach((entryName, entryInd) => {
       template: path.join(__dirname, './index.html'),
       filename: entryInd === 0 ? 'index.html' : `${entryName}.html`,
       path: PATHS.dist,
-      favicon: PATHS.images + '/' + '/favicon.ico',
+      favicon: path.join(PATHS.images, 'favicon.ico'),
       chunks: [entryName]
     })
   );
