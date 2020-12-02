@@ -20,16 +20,6 @@ module.exports = {
     'react-hooks'
   ],
   rules: {
-    'prettier/prettier': [
-      'error', {
-        singleQuote: true,
-        trailingComma: 'all',
-        bracketSpacing: false,
-        jsxBracketSameLine: true,
-        arrowParens: 'avoid'
-      }
-    ],
-
     // we dont use jxs file extensions
     'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
 
