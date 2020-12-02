@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 
-import {ROUTE__LOGIN, ROUTE__MAIN} from 'constants/routes';
-import ApiService from 'services/ApiService';
-import {init, uninit} from 'actionCreators/appInit';
-import {logout} from 'actionCreators/auth';
-import Login from 'components/Login';
-import Main from 'components/Main';
+import {ROUTE__LOGIN, ROUTE__MAIN} from 'src/constants/routes';
+import ApiService from 'src/services/ApiService';
+import {init, uninit} from 'src/actionCreators/appInit';
+import {logout} from 'src/actionCreators/auth';
+import Login from 'src/components/Login';
+import Main from 'src/components/Main';
 import './styles.css';
 
 class App extends React.PureComponent {

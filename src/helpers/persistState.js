@@ -1,4 +1,4 @@
-import {load as loadFromLocalStorage} from 'helpers/localStorage';
+import {load as loadFromLocalStorage} from 'src/helpers/localStorage';
 
 const STATE_KEY = 'state';
 

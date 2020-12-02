@@ -1,4 +1,4 @@
-import {ACTION__APP__INIT, ACTION__APP__UNINIT} from 'constants/actions';
+import {ACTION__APP__INIT, ACTION__APP__UNINIT} from 'src/constants/actions';
 
 export const init = () => dispatch =>
   dispatch({

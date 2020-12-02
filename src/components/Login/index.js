@@ -3,8 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import classNames from 'classnames/bind';
 import {Form, Input, Button} from 'antd';
 
-import {login} from 'actionCreators/auth';
-import {gotoRoute} from 'helpers/history';
+import {login} from 'src/actionCreators/auth';
+import {gotoRoute} from 'src/helpers/history';
 import styles from './styles.css';
 
 const cx = classNames.bind(styles);

@@ -7,10 +7,10 @@ import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
-import {loadState, saveState} from 'helpers/persistState';
-import rootReducer from 'reducers';
-import App from 'components/App';
-import history from '../../history';
+import {loadState, saveState} from 'src/helpers/persistState';
+import rootReducer from 'src/reducers';
+import App from 'src/components/App';
+import history from 'src//history';
 
 const persistedState = loadState();
 

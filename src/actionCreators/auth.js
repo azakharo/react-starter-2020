@@ -1,4 +1,4 @@
-import api from 'services/ApiService';
+import api from 'src/services/ApiService';
 import {
   ACTION__LOGIN,
   ACTION__LOGIN_FAIL,
@@ -6,7 +6,7 @@ import {
   ACTION__LOGOUT,
   ACTION__LOGOUT_FAIL,
   ACTION__LOGOUT_SUCCESS,
-} from 'constants/actions';
+} from 'src/constants/actions';
 
 export const login = (username, password) => dispatch => {
   dispatch({
