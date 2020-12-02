@@ -7,6 +7,7 @@ import {
   ACTION__LOGOUT_FAIL,
   ACTION__LOGOUT_SUCCESS,
 } from 'src/constants/actions';
+import {saveState} from 'src/helpers/persistState';
 
 export const login = (username, password) => dispatch => {
   dispatch({
@@ -15,11 +16,19 @@ export const login = (username, password) => dispatch => {
   });
 
   return api.login(username, password).then(
-    user =>
+    user => {
+      saveState({
+        auth: {
+          isAuthenticated: true,
+          user,
+        },
+      });
+
       dispatch({
         type: ACTION__LOGIN_SUCCESS,
         payload: user,
-      }),
+      });
+    },
     error =>
       dispatch({
         type: ACTION__LOGIN_FAIL,
