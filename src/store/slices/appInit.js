@@ -6,15 +6,15 @@ const slice = createSlice({
   name: 'appInit',
   initialState,
   reducers: {
-    appInit() {},
-    appUninit() {},
+    init() {},
+    uninit() {},
   },
 });
 
 export const {reducer} = slice;
 
-export const init = () => dispatch => dispatch(slice.actions.appInit());
+export const init = () => dispatch => dispatch(slice.actions.init());
 
-export const uninit = () => dispatch => dispatch(slice.actions.appUninit());
+export const uninit = () => dispatch => dispatch(slice.actions.uninit());
 
 export default slice;
