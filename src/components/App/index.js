@@ -5,8 +5,8 @@ import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 
 import {ROUTE__LOGIN, ROUTE__MAIN} from 'src/constants/routes';
 import ApiService from 'src/services/ApiService';
-import {init, uninit} from 'src/actionCreators/appInit';
-import {logout} from 'src/actionCreators/auth';
+import {init, uninit} from 'src/store/slices/appInit';
+import {logout} from 'src/store/slices/auth';
 import Login from 'src/components/Login';
 import Main from 'src/components/Main';
 import './styles.css';

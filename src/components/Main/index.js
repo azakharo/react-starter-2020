@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import {Button} from 'antd';
 
 import errorImg from 'IMAGES/error-page-icon.png';
-import {logout} from 'src/actionCreators/auth';
+import {logout} from 'src/store/slices/auth';
 import styles from './styles.css';
 
 const cx = classNames.bind(styles);

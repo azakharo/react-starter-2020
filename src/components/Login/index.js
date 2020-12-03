@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import classNames from 'classnames/bind';
 import {Form, Input, Button} from 'antd';
 
-import {login} from 'src/actionCreators/auth';
+import {login} from 'src/store/slices/auth';
 import {gotoRoute} from 'src/helpers/history';
 import styles from './styles.css';
 
