@@ -10,6 +10,27 @@ const initialState = {
   error: null,
 };
 
+//* ********************************************************
+// Selectors
+
+const selectAuth = wholeState => wholeState.auth;
+export const selectError = state => selectAuth(state).error;
+export const selectIsInProgress = state => selectAuth(state).isInProgress;
+export const selectIsAuthenticated = state => selectAuth(state).isAuthenticated;
+export const selectUser = state => selectAuth(state).user;
+export const selectUsername = state => {
+  const user = selectUser(state);
+
+  if (!user) {
+    return '';
+  }
+
+  return user.name;
+};
+
+// Selectors
+//* ********************************************************
+
 const slice = createSlice({
   name: 'auth',
   initialState,

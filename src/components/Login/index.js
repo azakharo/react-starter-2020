@@ -4,7 +4,12 @@ import {useHistory} from 'react-router-dom';
 import classNames from 'classnames/bind';
 import {Form, Input, Button} from 'antd';
 
-import {login} from 'src/store/slices/auth';
+import {
+  login,
+  selectError,
+  selectIsAuthenticated,
+  selectIsInProgress,
+} from 'src/store/slices/auth';
 import styles from './styles.css';
 
 const cx = classNames.bind(styles);
@@ -17,17 +22,12 @@ const tailLayout = {
   wrapperCol: {offset: 8, span: 16},
 };
 
-const getAuthState = wholeState => wholeState.auth;
-const getError = state => getAuthState(state).error;
-const getIsInProgress = state => getAuthState(state).isInProgress;
-const getIsAuthenticated = state => getAuthState(state).isAuthenticated;
-
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const error = useSelector(getError);
-  const isInProgress = useSelector(getIsInProgress);
-  const isAuthenticated = useSelector(getIsAuthenticated);
+  const error = useSelector(selectError);
+  const isInProgress = useSelector(selectIsInProgress);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   const handleSubmit = useCallback(
     values => {
