@@ -1,10 +1,10 @@
 import React, {useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 import classNames from 'classnames/bind';
 import {Form, Input, Button} from 'antd';
 
 import {login} from 'src/store/slices/auth';
-import {gotoRoute} from 'src/helpers/history';
 import styles from './styles.css';
 
 const cx = classNames.bind(styles);
@@ -23,6 +23,7 @@ const getIsInProgress = state => getAuthState(state).isInProgress;
 const getIsAuthenticated = state => getAuthState(state).isAuthenticated;
 
 const Login = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const error = useSelector(getError);
   const isInProgress = useSelector(getIsInProgress);
@@ -39,7 +40,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      gotoRoute('/', 'replace');
+      history.replace('/');
     }
   }, [isAuthenticated]);
 
