@@ -11,7 +11,7 @@ import Login from 'src/components/Login';
 import Main from 'src/components/Main';
 import './styles.css';
 
-class App extends React.PureComponent {
+class Routes extends React.PureComponent {
   static propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
     logout: PropTypes.func.isRequired,
@@ -64,4 +64,4 @@ const mapDispatchToProps = {
   appUninit: uninit,
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Routes));

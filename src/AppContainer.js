@@ -4,14 +4,14 @@ import {Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import store from 'src/store';
-import App from 'src/components/App';
+import Routes from 'src/Routes';
 import history from 'src/history';
 
 const AppContainer = () => {
   return (
     <Provider store={store}>
       <Router history={history}>
-        <App />
+        <Routes />
       </Router>
     </Provider>
   );
