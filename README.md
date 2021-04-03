@@ -3,13 +3,23 @@
 Usage: create fast prototypes, solve test tasks.
 
 ## Features:
+* Routing
+* Login and Main pages
+* UI toolkit
+* Redux configured. State can be saved/restored from localStorage.
+* ApiService configured (abstraction level)
+* PostCSS configured
+* Custom build (dev, prod)
+* Linting (JS, CSS), code formatting
+
+## Tools:
 * Babel, Webpack
 * Separate webpack config for development and production. There is also a common part.
 * webpack dev server with hot reloading
 * ESlint, Stylelint
 * Prettier
 * PostCSS and autoprefixer
-* Redux, redux-thunk + setup redux dev tools for developement
+* Redux, redux-thunk + setup redux dev tools for development
 * File structure
 * Routing configured
 * axios
