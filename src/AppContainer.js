@@ -4,8 +4,8 @@ import {Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 import store from 'src/store';
-import Routes from 'src/Routes';
 import history from 'src/history';
+import Routes from './Routes';
 
 const AppContainer = () => {
   return (

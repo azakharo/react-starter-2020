@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 const {PATHS} = require('./build-constants.js');
@@ -88,12 +87,6 @@ const webpackConfig = {
     ...htmlPluginInstances,
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
-    new StyleLintPlugin({
-      context: 'src',
-      files: '**/*.css',
-      failOnError: false,
-      quiet: true
-    })
   ]
 };
 

@@ -51,7 +51,7 @@ const slice = createSlice({
     loginFail(state, action) {
       return {
         ...initialState,
-        error: action.payload.message,
+        error: action.payload,
       };
     },
     logout() {
@@ -78,7 +78,9 @@ export const login = (username, password) => dispatch => {
 
       dispatch(slice.actions.loginSuccess(user));
     },
-    error => dispatch(slice.actions.loginFail(error)),
+    error => {
+      dispatch(slice.actions.loginFail(error.message));
+    },
   );
 };
 

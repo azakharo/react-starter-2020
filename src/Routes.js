@@ -7,9 +7,8 @@ import {ROUTE__LOGIN, ROUTE__MAIN} from 'src/constants/routes';
 import ApiService from 'src/services/ApiService';
 import {init, uninit} from 'src/store/slices/appInit';
 import {logout} from 'src/store/slices/auth';
-import Login from 'src/components/Login';
-import Main from 'src/components/Main';
-import './styles.css';
+import Login from 'src/views/Login';
+import Main from 'src/views/Main';
 
 class Routes extends React.PureComponent {
   static propTypes = {
