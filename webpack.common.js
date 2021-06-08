@@ -14,7 +14,7 @@ const htmlPluginInstances = [];
 const entryNames = Object.keys(entries);
 entryNames.forEach((entryName, entryInd) => {
   htmlPluginInstances.push(new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
+      template: path.join(__dirname, 'src', 'index.html'),
       filename: entryInd === 0 ? 'index.html' : `${entryName}.html`,
       path: PATHS.dist,
       favicon: path.join(PATHS.images, 'favicon.ico'),

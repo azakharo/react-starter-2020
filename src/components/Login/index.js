@@ -42,7 +42,7 @@ const Login = () => {
     if (isAuthenticated) {
       history.replace('/');
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, history]);
 
   return (
     <div className={cx('container')}>
@@ -51,7 +51,8 @@ const Login = () => {
         name="login"
         initialValues={{}}
         onFinish={handleSubmit}
-        className={cx('form')}>
+        className={cx('form')}
+      >
         <Form.Item {...tailLayout}>
           <span className={cx('title')}>Welcome to the test</span>
         </Form.Item>
@@ -59,14 +60,16 @@ const Login = () => {
         <Form.Item
           label="Username"
           name="username"
-          rules={[{required: true, message: 'Please enter username'}]}>
+          rules={[{required: true, message: 'Please enter username'}]}
+        >
           <Input autoFocus disabled={isInProgress} />
         </Form.Item>
 
         <Form.Item
           label="Password"
           name="password"
-          rules={[{required: true, message: 'Please enter password'}]}>
+          rules={[{required: true, message: 'Please enter password'}]}
+        >
           <Input.Password disabled={isInProgress} />
         </Form.Item>
 
@@ -75,7 +78,8 @@ const Login = () => {
             type="primary"
             htmlType="submit"
             loading={isInProgress}
-            className={cx('submit-button')}>
+            className={cx('submit-button')}
+          >
             Login
           </Button>
           {error && <div className={cx('error-msg')}>{error}</div>}
