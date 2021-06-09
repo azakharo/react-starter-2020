@@ -8,22 +8,20 @@ Usage: create fast prototypes, solve test tasks.
 * UI toolkit
 * Redux configured. State can be saved/restored from localStorage.
 * ApiService configured (abstraction level)
-* PostCSS configured
 * Custom build (dev, prod)
-* Linting (JS, CSS), code formatting
+* Linting, code formatting
 
 ## Tools:
 * Babel, Webpack
 * Separate webpack config for development and production. There is also a common part.
 * webpack dev server with hot reloading
-* ESlint, Stylelint
+* ESlint
 * Prettier
-* PostCSS and autoprefixer
 * Redux, redux-thunk + setup redux dev tools for development
 * File structure
 * Routing configured
 * axios
-* antd as default UI toolkit. Can be easily removed if not needed.
+* material-ui toolkit
 * As an example, the login and main page were added to the project.
 
 ## Building and running on localhost
