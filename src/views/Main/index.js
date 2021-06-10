@@ -18,8 +18,7 @@ const asideMainCommonStyles = {
 
 const useStyles = makeStyles(() => ({
   container: {
-    // TODO 100vh doesn't work as expected - investigate and fix
-    height: 'calc(100vh - 24px)',
+    height: '100vh',
     display: 'grid',
     gridTemplateAreas: `"header header"
     "sidebar main"
@@ -69,6 +68,7 @@ const useStyles = makeStyles(() => ({
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
+    padding: '0 16px',
   },
 }));
 
