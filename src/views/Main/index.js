@@ -51,7 +51,7 @@ const useStyles = makeStyles(() => ({
   },
 
   username: {
-    fontWeight: 500,
+    fontWeight: 'bold',
   },
 
   main: {
@@ -66,6 +66,9 @@ const useStyles = makeStyles(() => ({
 
   footer: {
     gridArea: 'footer',
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
   },
 }));
 
@@ -92,7 +95,7 @@ const Main = () => {
       </header>
       <aside className={classes.aside}>Sidebar</aside>
       <main className={classes.main}>Main</main>
-      <footer className={classes.footer}>footer</footer>
+      <footer className={classes.footer}>Footer</footer>
     </div>
   );
 };
