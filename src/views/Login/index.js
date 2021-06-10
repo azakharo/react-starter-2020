@@ -29,8 +29,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const v8nSchema = Yup.object().shape({
-  username: Yup.string().required(),
-  password: Yup.string().required(),
+  username: Yup.string().required('required'),
+  password: Yup.string().required('required'),
 });
 
 const Login = () => {
@@ -74,7 +74,7 @@ const Login = () => {
 
             {authError && <FormHelperText error>{authError}</FormHelperText>}
 
-            <Box mt={2}>
+            <Box pt={2}>
               <Button
                 color="secondary"
                 disabled={isSubmitting}
@@ -85,6 +85,15 @@ const Login = () => {
                 Login
               </Button>
             </Box>
+
+            <Typography
+              align="center"
+              variant="subtitle2"
+              color="textSecondary"
+            >
+              For login use &quot;eve.holt@reqres.in&quot; username with any
+              password
+            </Typography>
           </form>
         </div>
       )}
