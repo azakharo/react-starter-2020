@@ -40,7 +40,6 @@
     "@babel/preset-env": "7.14.4",
     "@babel/preset-react": "7.13.13",
     "@hot-loader/react-dom": "16.13.0+4.12.20",
-    "autoprefixer": "9.8.0",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "3.0.0",
