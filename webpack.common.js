@@ -77,7 +77,7 @@ const webpackConfig = {
       'node_modules',
       __dirname,
     ],
-    extensions: ['.js', '.jsx', '.json', '.svg', '.png', '.gif', '.jpg'],
+    extensions: ['ts', 'tsx', '.js', '.jsx', '.json', '.svg', '.png', '.gif', '.jpg'],
     alias: {
       'IMAGES': PATHS.images
     }
