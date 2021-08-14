@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 import api from 'src/services/ApiService';
-import {saveState} from 'src/helpers/persistState';
+import {saveState} from 'src/helpers/persistState.ts';
 
 const initialState = {
   isInProgress: false,

@@ -1,23 +1,23 @@
 module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
   env: {
     browser: true,
     es2021: true,
   },
+  plugins: [
+    'prettier',
+    '@typescript-eslint',
+    'react-hooks'
+  ],
   extends: [
     'airbnb',
     'plugin:prettier/recommended',
+    "plugin:@typescript-eslint/recommended",
     'prettier'
-  ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: [
-    'prettier',
-    'react-hooks'
   ],
   rules: {
     // we dont use jxs file extensions
@@ -38,13 +38,17 @@ module.exports = {
     "import/prefer-default-export": 1,
 
     'react/destructuring-assignment': [0, 'always', { ignoreClassFields: true }],
+    'react/prop-types': 'off'
   },
-  parser: 'babel-eslint',
   settings: {
     "import/resolver": {
       webpack: {
         config: 'webpack.common.js'
       }
+    },
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
   }
 };

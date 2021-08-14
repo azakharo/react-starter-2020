@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 
-import {ROUTE__LOGIN, ROUTE__MAIN} from 'src/constants/routes';
+import {ROUTE__LOGIN, ROUTE__MAIN} from 'src/constants/routes.ts';
 import ApiService from 'src/services/ApiService';
 import {init, uninit} from 'src/store/slices/appInit';
 import {logout} from 'src/store/slices/auth';

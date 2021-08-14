@@ -32,7 +32,7 @@ const webpackConfig = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.tsx?$/i,
         exclude: /node_modules/,
         use: [
           {
@@ -46,9 +46,18 @@ const webpackConfig = {
         ]
       },
       {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        test: /\.(ts|js)x?$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react",
+              "@babel/preset-typescript",
+            ],
+          },
+        },
       },
       {
         test: /\.css$/,
@@ -77,7 +86,7 @@ const webpackConfig = {
       'node_modules',
       __dirname,
     ],
-    extensions: ['ts', 'tsx', '.js', '.jsx', '.json', '.svg', '.png', '.gif', '.jpg'],
+    extensions: ['tsx', 'ts', '.js', '.jsx', '.json', '.svg', '.png', '.gif', '.jpg'],
     alias: {
       'IMAGES': PATHS.images
     }
