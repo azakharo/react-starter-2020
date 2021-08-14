@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const {PATHS} = require('./build-constants.js');
 
@@ -30,21 +31,21 @@ const webpackConfig = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.tsx?$/i,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              failOnWarning: false,
-              failOnError: false,
-              fix: true
-            }
-          }
-        ]
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.tsx?$/i,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: 'eslint-loader',
+      //       options: {
+      //         failOnWarning: false,
+      //         failOnError: false,
+      //         fix: true
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.(ts|js)x?$/i,
         exclude: /node_modules/,
@@ -95,6 +96,9 @@ const webpackConfig = {
     ...htmlPluginInstances,
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      async: false
+    }),
   ]
 };
 
